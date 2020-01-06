@@ -7,7 +7,6 @@
 - name: check_pull_required |  Generate a list of information about the images on a node
   shell: "{{ image_info_command }}"
   delegate_to: "{{ download_delegate if download_run_once or inventory_hostname }}"
-  no_log: true
   register: docker_images
   failed_when: false
   changed_when: false
